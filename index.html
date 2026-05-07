@@ -1,1 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRAWJU — The Next Great Kaiju</title>
+<meta property="og:title" content="CRAWJU — The Next Great Kaiju">
+<meta property="og:description" content="A territorial force from the depths of the swamp. Ancient, inevitable, and not to be mistaken for a friendly mascot. The memes are real — but so is the myth.">
+<meta property="og:image" content="https://raw.githubusercontent.com/crawju-swamp/nothing/main/hero.mp4">
+<meta property="og:url" content="https://crawju.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CRAWJU — The Next Great Kaiju">
+<meta name="twitter:description" content="A territorial force from the depths of the swamp. Ancient, inevitable, and not to be mistaken for a friendly mascot.">
+<meta name="twitter:site" content="@crawju">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blk:#04060a;--sd:#060d0a;--gg:#1e6b3a;--gb:#3dba68;--gt:#4ade80;--rd:#6b1520;--rm:#9b2030;--rb:#c8303f;--bn:#ddc898;--fg:#8fa88a;--tx:#aabba4}
+html{scroll-behavior:smooth}
+body{background:var(--blk);color:var(--tx);font-family:'Crimson Text',serif;font-size:18px;line-height:1.7;overflow-x:hidden}
 
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;background:rgba(4,6,10,0.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(30,107,58,0.2)}
+.nl{font-family:'Cinzel Decorative',serif;font-size:1.2rem;color:var(--bn);letter-spacing:0.2em;text-decoration:none}
+.nm{display:flex;gap:1.8rem;list-style:none;align-items:center}
+.nm a{color:var(--fg);font-family:'Cinzel',serif;font-size:0.67rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:color 0.3s}
+.nm a:hover{color:var(--gt)}
+.ns{color:var(--bn)!important;border:1px solid rgba(155,32,48,0.5);padding:0.4rem 1rem}
+.ns:hover{background:rgba(107,21,32,0.3)!important;border-color:var(--rb)!important;color:var(--rb)!important}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:flex-start;overflow:hidden;background:var(--blk)}
+.hbg{position:absolute;inset:0;overflow:hidden}
+.hbg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:85% center}
+.hbg-fallback{position:absolute;inset:0;background-image:url('https://raw.githubusercontent.com/crawju-swamp/nothing/main/assets/crawju_hero.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat;z-index:-1}
+.hgrad{position:absolute;inset:0;background:linear-gradient(to right,rgba(4,6,10,0.92) 0%,rgba(4,6,10,0.88) 35%,rgba(4,6,10,0.5) 55%,rgba(4,6,10,0.08) 70%,transparent 100%)}
+.htop{position:absolute;top:0;left:0;right:0;height:140px;background:linear-gradient(to bottom,rgba(4,6,10,0.7),transparent)}
+.hbot{position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(to top,rgba(4,6,10,0.98),rgba(4,6,10,0.4),transparent)}
+.hscr{position:absolute;inset:0;opacity:0.03;background-image:repeating-linear-gradient(87deg,rgba(0,0,0,0.8) 0px,transparent 1px,transparent 3px,rgba(0,0,0,0.4) 4px)}
+.ff{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gt);animation:ffloat linear infinite;opacity:0;z-index:3;box-shadow:0 0 6px var(--gt)}
+@keyframes ffloat{0%{opacity:0;transform:translate(0,0)}15%{opacity:1}50%{opacity:0.8;transform:translate(var(--fx),var(--fy))}85%{opacity:0.9}100%{opacity:0;transform:translate(calc(var(--fx)*1.4),calc(var(--fy)*1.6))}}
+.hc{position:relative;z-index:10;text-align:center;padding:2rem 0;max-width:600px;margin-left:9vw}
+.ht{font-family:'Cinzel Decorative',serif;font-size:clamp(4.5rem,8vw,8rem);font-weight:900;line-height:0.85;letter-spacing:0.08em;margin-bottom:0.3em;display:block;width:100%}
+.htt{background:linear-gradient(180deg,var(--bn) 0%,rgba(221,200,152,0.9) 30%,rgba(200,100,80,0.9) 65%,var(--rd) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 60px rgba(155,32,48,0.5))}
+.hline{width:80px;height:1px;background:linear-gradient(to right,transparent,var(--rm),transparent);margin:0 auto 0.8rem}
+.htag{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.18em;color:rgba(220,80,80,1);text-transform:uppercase;display:block;text-align:center;margin-bottom:1.8rem;text-shadow:0 0 20px rgba(200,48,63,0.6)}
+.hlore{font-size:1.05rem;font-style:italic;color:rgba(170,187,164,0.92);max-width:500px;margin:0 auto 2rem;text-shadow:0 2px 20px rgba(0,0,0,1);text-align:center}
+.hstats{display:flex;max-width:520px;margin:0 auto 2.5rem;border:1px solid rgba(30,107,58,0.25);background:rgba(4,6,10,0.6);backdrop-filter:blur(8px)}
+.sv{flex:1;text-align:center;padding:1.1rem 0.8rem;border-right:1px solid rgba(30,107,58,0.2)}
+.sv:last-child{border-right:none}
+.svv{font-family:'Cinzel',serif;font-size:1rem;color:var(--bn);display:block}
+.svl{font-size:0.6rem;letter-spacing:0.2em;color:var(--gg);text-transform:uppercase}
+.ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.bm{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;padding:1rem 2.5rem;background:rgba(107,21,32,0.85);color:var(--bn);border:1px solid var(--rm);text-decoration:none;display:inline-block;transition:all 0.3s}
+.bm:hover{background:var(--rm);box-shadow:0 0 40px rgba(155,32,48,0.5)}
+.bgb{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;padding:1rem 2.5rem;background:rgba(4,6,10,0.6);color:var(--bn);border:1px solid rgba(30,107,58,0.4);text-decoration:none;display:inline-block;transition:all 0.3s}
+.bgb:hover{border-color:var(--gt);color:var(--gt)}
+
+/* SECTIONS */
+section{padding:2rem 2rem;position:relative}
+.si{max-width:1000px;margin:0 auto}
+.stg{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.45em;color:var(--gg);text-transform:uppercase;margin-bottom:0.6rem;display:block}
+.stt{font-family:'Cinzel Decorative',serif;font-size:clamp(1.7rem,4vw,2.8rem);color:var(--bn);line-height:1.05;margin-bottom:1.2rem}
+.divd{display:flex;align-items:center;gap:0.8rem;margin-bottom:3rem}
+.divd::before{content:'///';font-family:'Cinzel',serif;font-size:0.9rem;color:var(--rm)}
+.divd::after{content:'';width:100px;height:1px;background:linear-gradient(to right,var(--rm),transparent)}
+
+/* LORE */
+.ls{background:linear-gradient(180deg,var(--blk) 0%,var(--sd) 40%,var(--blk) 100%)}
+.lg{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
+.imgf{position:relative;aspect-ratio:0.85;background:transparent;border:none;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.corn{position:absolute;width:18px;height:18px;border-color:rgba(155,32,48,0.5);border-style:solid;border-width:0;z-index:1}
+.tl{top:8px;left:8px;border-top-width:1px;border-left-width:1px}
+.tr{top:8px;right:8px;border-top-width:1px;border-right-width:1px}
+.bl{bottom:8px;left:8px;border-bottom-width:1px;border-left-width:1px}
+.brr{bottom:8px;right:8px;border-bottom-width:1px;border-right-width:1px}
+.lt p{margin-bottom:1.3rem;font-size:1.02rem}
+.bq{border-left:2px solid var(--rm);padding:0.75rem 1.5rem;margin:1.5rem 0;font-style:italic;color:var(--fg);background:rgba(107,21,32,0.07)}
+
+/* ORIGIN */
+
+
+
+.ti{display:grid;grid-template-columns:56px 1fr;gap:2rem;padding:2.2rem 0;border-bottom:1px solid rgba(30,107,58,0.08)}
+.tn{font-family:'Cinzel Decorative',serif;font-size:2.2rem;color:rgba(155,32,48,0.2);line-height:1}
+.tc h3{font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.12em;color:var(--bn);margin-bottom:0.6rem;text-transform:uppercase}
+.tc p{font-size:0.98rem;color:var(--tx)}
+.cq{background:rgba(6,13,10,0.8);border:1px solid rgba(30,107,58,0.4);border-left:3px solid var(--gb);padding:2.5rem;margin-top:1rem;position:relative;box-shadow:0 0 20px rgba(61,186,104,0.08)}
+.cq::before{content:'"';position:absolute;top:-1.8rem;left:1.5rem;font-family:'Cinzel Decorative',serif;font-size:5rem;color:rgba(30,107,58,0.12);line-height:1}
+.cq p{font-style:italic;font-size:1.15rem;color:var(--fg);margin-bottom:0.8rem}
+.cqa{font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.25em;color:var(--gg);text-transform:uppercase}
+
+/* THE SWAMP */
+.ss{background-image:url('https://raw.githubusercontent.com/crawju-swamp/nothing/main/assets/swamp_bg.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat;position:relative}
+.ss::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,6,10,0.75) 0%,rgba(4,6,10,0.45) 40%,rgba(4,6,10,0.75) 100%);z-index:0}
+.ss .si{position:relative;z-index:1}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;margin-top:3rem;border:1px solid rgba(30,107,58,0.12)}
+.sc{background:rgba(6,13,10,0.85);padding:2.2rem 1.8rem;position:relative;overflow:hidden;transition:background 0.4s;border-left:1px solid rgba(30,107,58,0.08)}
+.sc:first-child{border-left:none}
+.sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--rd),var(--gg));opacity:0;transition:opacity 0.4s}
+.sc:hover{background:rgba(9,21,16,0.95)}
+.sc:hover::after{opacity:1}
+.sci{font-size:1.3rem;margin-bottom:1.2rem;opacity:0.6}
+.scs{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;padding:0.22rem 0.7rem;border:1px solid;display:inline-block;margin-bottom:0.9rem}
+.soon{color:var(--rb);border-color:rgba(200,48,63,0.3);background:rgba(107,21,32,0.2)}
+.dev{color:var(--gb);border-color:rgba(61,186,104,0.3);background:rgba(12,36,24,0.3)}
+.sc h3{font-family:'Cinzel',serif;font-size:0.85rem;color:var(--bn);letter-spacing:0.1em;margin-bottom:0.6rem;text-transform:uppercase}
+.sc p{color:var(--fg);font-size:0.88rem;line-height:1.6}
+
+/* FIGURINE */
+.fs{background:var(--blk);position:relative;overflow:hidden}
+.fs::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(107,21,32,0.07),transparent);pointer-events:none}
+.fi{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
+.fiff{aspect-ratio:0.9;background:rgba(6,13,10,0.7);border:1px solid rgba(30,107,58,0.2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.fdis{margin-top:2rem;padding:1.25rem 1.5rem;background:rgba(6,13,10,0.6);border:1px solid rgba(30,107,58,0.15);border-left:2px solid var(--gg);font-size:0.88rem;color:var(--fg);line-height:1.7}
+.fpr{font-family:'Cinzel',serif;font-size:1.6rem;color:var(--bn);margin:1.5rem 0}
+.fsp{margin:1.5rem 0;display:flex;flex-direction:column;gap:0.5rem}
+.fsi{display:flex;align-items:center;gap:0.75rem;font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.15em;color:var(--fg);text-transform:uppercase}
+.fsi::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gg);flex-shrink:0}
+.rdb{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;padding:1rem 2.5rem;background:var(--rd);color:var(--bn);border:1px solid var(--rm);text-decoration:none;display:inline-block;margin-top:0.5rem;transition:all 0.3s}
+.rdb:hover{background:var(--rm);box-shadow:0 0 30px rgba(155,32,48,0.4)}
+
+/* BUY */
+.bs{background-image:url('https://raw.githubusercontent.com/crawju-swamp/nothing/main/assets/acquire_bg.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat;position:relative}.bs::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,6,10,0.82) 0%,rgba(4,6,10,0.6) 50%,rgba(4,6,10,0.82) 100%);z-index:0}.bs .si{position:relative;z-index:1}
+
+.bsg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(30,107,58,0.08);border:1px solid rgba(30,107,58,0.1);margin-top:3rem}
+.bst{background:var(--sd);padding:2.2rem 1.8rem;position:relative;border-left:1px solid rgba(30,107,58,0.08)}
+.bst:first-child{border-left:none}
+.bsn{font-family:'Cinzel Decorative',serif;font-size:3.5rem;color:rgba(30,107,58,0.06);position:absolute;top:0.8rem;right:1.2rem;line-height:1}
+.bst h3{font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.12em;color:var(--bn);text-transform:uppercase;margin-bottom:0.6rem}
+.bst p{color:var(--fg);font-size:0.9rem;line-height:1.6}
+.bst a{color:var(--gg);text-decoration:none}
+.car{margin-top:2rem;background:rgba(6,13,10,0.8);border:1px solid rgba(30,107,58,0.18);padding:1.4rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.cal{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.3em;color:var(--gg);text-transform:uppercase;margin-bottom:0.35rem}
+.caa{font-family:monospace;font-size:0.72rem;color:var(--fg);word-break:break-all}
+
+/* CHARTS */
+.chs{background:var(--blk)}
+.chg{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:1px;background:rgba(30,107,58,0.07);border:1px solid rgba(30,107,58,0.1);margin-top:2rem}
+.chi{background:var(--blk);padding:1.1rem 1.4rem;display:flex;align-items:center;gap:0.7rem;text-decoration:none;color:var(--fg);font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.12em;transition:all 0.3s}
+.chi:hover{background:rgba(9,21,16,0.8);color:var(--bn)}
+.cd{width:5px;height:5px;border-radius:50%;background:var(--gg);flex-shrink:0}
+
+/* VAULT */
+.vs{background:var(--sd)}
+.vtabs{display:flex;gap:1px;margin-bottom:2.5rem;border-bottom:1px solid rgba(30,107,58,0.15)}
+.vtab{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;padding:1rem 2rem;color:var(--fg);cursor:pointer;border:none;background:transparent;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.3s}
+.vtab:hover{color:var(--bn)}
+.vtab.active{color:var(--bn);border-bottom-color:var(--rm)}
+.vtab-count{font-size:0.6rem;color:var(--gg);margin-left:0.5rem}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:rgba(30,107,58,0.08);border:1px solid rgba(30,107,58,0.1);min-height:200px}
+.acard{background:var(--blk);position:relative;overflow:hidden;transition:background 0.3s}
+.acard:hover{background:rgba(9,21,16,0.95)}
+.acard:hover .aover{opacity:1}
+.athumb{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.athumb.is-gif{aspect-ratio:1}
+.athumb.is-wall{aspect-ratio:16/9}
+.aover{position:absolute;inset:0;background:rgba(4,6,10,0.8);display:flex;align-items:center;justify-content:center;gap:0.75rem;opacity:0;transition:opacity 0.3s;backdrop-filter:blur(2px)}
+.abtn{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.6rem 1.2rem;border:1px solid;cursor:pointer;text-decoration:none;display:inline-block;background:rgba(4,6,10,0.8)}
+.abtn-view{color:var(--gt);border-color:rgba(74,222,128,0.3)}
+.abtn-dl{color:var(--bn);border-color:rgba(221,200,152,0.3)}
+.ainfo{padding:0.9rem 1rem;border-top:1px solid rgba(30,107,58,0.1)}
+.aname{font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.1em;color:var(--bn);text-transform:uppercase;display:block;margin-bottom:0.2rem}
+.asize{font-size:0.72rem;color:rgba(143,168,138,0.4)}
+.vempty{grid-column:1/-1;padding:4rem 2rem;text-align:center}
+.vempty-icon{font-size:3rem;opacity:0.1;margin-bottom:1rem}
+.vempty-title{font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(143,168,138,0.35);margin-bottom:0.5rem}
+.vempty-sub{font-size:0.88rem;color:rgba(143,168,138,0.2)}
+
+/* COMMUNITY */
+.cms{background:linear-gradient(180deg,var(--blk),var(--sd))}
+.cml{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap}
+.cma{display:flex;align-items:center;gap:0.7rem;padding:1.1rem 2.2rem;border:1px solid rgba(30,107,58,0.2);text-decoration:none;color:var(--fg);font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;transition:all 0.3s;background:rgba(6,13,10,0.5)}
+.cma:hover{border-color:var(--gt);color:var(--gt);background:rgba(12,36,24,0.3)}
+.cma-x:hover{border-color:rgba(29,155,240,0.8)!important;color:#6bb8f0!important;background:rgba(29,155,240,0.1)!important;box-shadow:0 0 20px rgba(29,155,240,0.15)}
+.cma-discord:hover{border-color:rgba(114,137,218,0.8)!important;color:#9ba8e0!important;background:rgba(114,137,218,0.1)!important;box-shadow:0 0 20px rgba(114,137,218,0.15)}
+
+footer{background:var(--blk);border-top:1px solid rgba(30,107,58,0.1);padding:4rem 2rem;text-align:center}
+.flogo{font-family:'Cinzel Decorative',serif;font-size:1.7rem;color:rgba(221,200,152,0.45);letter-spacing:0.25em;margin-bottom:1.2rem}
+.fline{width:70px;height:1px;background:linear-gradient(to right,transparent,var(--rm),transparent);margin:0 auto 1.2rem}
+.ft{font-size:0.78rem;color:rgba(143,168,138,0.65);letter-spacing:0.08em;line-height:2.2}
+
+/* LIGHTBOX */
+.lb{display:none;position:fixed;inset:0;z-index:1000;background:rgba(4,6,10,0.96);align-items:center;justify-content:center;padding:2rem}
+.lb.open{display:flex}
+.lb-inner{position:relative;max-width:90vw;max-height:90vh;text-align:center}
+.lb-inner img{max-width:100%;max-height:75vh;object-fit:contain;display:block;margin:0 auto}
+.lb-close{position:absolute;top:-2.5rem;right:0;font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.2em;color:var(--fg);cursor:pointer;text-transform:uppercase;background:none;border:none;padding:0.5rem}
+.lb-dl{display:inline-block;margin-top:1.2rem;font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.75rem 2rem;background:rgba(107,21,32,0.7);color:var(--bn);border:1px solid var(--rm);text-decoration:none;transition:all 0.3s}
+.lb-dl:hover{background:var(--rm)}
+
+@media(max-width:768px){
+  /* NAV */
+  .nm{display:none}
+
+  /* HERO */
+  .hero{min-height:100svh;align-items:flex-end;padding-bottom:3rem}
+  .hbg{background-position:70% center}
+  .hgrad{background:linear-gradient(to top,rgba(4,6,10,0.98) 0%,rgba(4,6,10,0.85) 40%,rgba(4,6,10,0.3) 100%)}
+  .hc{text-align:center;margin-left:0;padding:1.5rem;max-width:100%;width:100%}
+  .ht{font-size:clamp(3rem,15vw,5rem)}
+  .hlore{font-size:0.95rem;max-width:100%}
+  .hstats{max-width:100%;flex-wrap:wrap}
+  .sv{min-width:45%;flex:1 1 45%}
+  .svv{font-size:0.85rem}
+  .ctas{flex-direction:column;align-items:center}
+  .bm,.bgb{width:100%;text-align:center;padding:0.9rem 1rem}
+
+  /* SECTIONS */
+  .lg,.fi{grid-template-columns:1fr}
+  .bsg{grid-template-columns:1fr}
+  .bst{border-left:none;border-top:1px solid rgba(30,107,58,0.08)}
+  .vtabs{overflow-x:auto}
+
+  /* HOW THE MEME BEGAN - stack image on top, text below */
+  .alt-item{display:block!important;min-height:auto}
+  .alt-item.reverse{direction:ltr!important}
+  .alt-img{display:block;width:100%;height:260px;overflow:hidden}
+  .alt-img img{width:100%!important;height:260px!important;object-fit:cover!important;display:block!important}
+  .alt-ph{height:260px;min-height:260px}
+  .alt-item:not(.reverse) .alt-img::after{background:linear-gradient(to bottom,transparent 50%,var(--sd) 100%)}
+  .alt-item.reverse .alt-img::after{background:linear-gradient(to bottom,transparent 50%,var(--sd) 100%)}
+  .alt-text{display:block!important;width:100%!important;padding:2rem 1.5rem!important;direction:ltr!important}
+  .alt-p{font-size:0.95rem!important;line-height:1.6!important;word-break:normal!important}
+
+  /* SWAMP CARDS */
+  .sg{grid-template-columns:1fr}
+  .sc{border-left:none;border-top:1px solid rgba(30,107,58,0.08)}
+
+  /* CHARTS */
+  .chg{grid-template-columns:repeat(2,1fr)}
+
+  /* VAULT TABS */
+  .vtab{padding:0.75rem 1rem;font-size:0.65rem;letter-spacing:0.15em}
+
+  /* COMMUNITY */
+  .cml{flex-direction:column}
+  .cma{justify-content:center}
+
+  /* ORIGIN */
+  .os{background-size:cover;min-height:auto}
+  .os-hero{height:280px}
+}
+
+/* os moved to hybrid */
+.os-hero{width:100%;height:520px;background-image:url('https://raw.githubusercontent.com/crawju-swamp/nothing/main/assets/origin_bg.jpg');background-size:cover;background-position:center 30%;background-repeat:no-repeat;position:relative}
+.os-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(to top,var(--blk),transparent)}
+.os-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:100px;background:linear-gradient(to bottom,rgba(4,6,10,0.5),transparent)}
+.os-content{padding:4rem 2rem 6rem}
+
+/* HYBRID ALTERNATING ORIGIN SECTION */
+.os{background:var(--blk);position:relative}
+.os-hero{width:100%;height:520px;background-size:cover;background-position:center 30%;background-repeat:no-repeat;position:relative}
+.os-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(to top,var(--blk),transparent)}
+.os-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:100px;background:linear-gradient(to bottom,rgba(4,6,10,0.5),transparent)}
+.os-content{padding:4rem 2rem 6rem}
+.alt-item{display:grid;grid-template-columns:1fr 1fr;min-height:440px;margin-bottom:1px;overflow:hidden;position:relative}
+.alt-item.reverse .alt-img{order:2}
+.alt-item.reverse .alt-text{order:1}
+.alt-img{position:relative;overflow:hidden;background:var(--sd)}
+.alt-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s}
+.alt-item:hover .alt-img img{transform:scale(1.03)}
+.alt-ph{width:100%;height:100%;min-height:440px;display:flex;align-items:center;justify-content:center;background:rgba(6,13,10,0.8);font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;color:rgba(30,107,58,0.3);text-transform:uppercase}
+.alt-item:not(.reverse) .alt-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 40%,var(--sd) 100%)}
+.alt-item.reverse .alt-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to left,transparent 40%,var(--sd) 100%)}
+.alt-text{background:var(--sd);padding:3.5rem;display:flex;flex-direction:column;justify-content:center}
+.alt-item::before{content:'';position:absolute;top:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,var(--blk),transparent);z-index:2;pointer-events:none}
+.alt-item::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to top,var(--blk),transparent);z-index:2;pointer-events:none}
+.alt-tn{font-family:'Cinzel Decorative',serif;font-size:1.8rem;color:rgba(155,32,48,0.3);line-height:1;margin-bottom:0.3rem}
+.alt-h3{font-family:'Cinzel',serif;font-size:0.88rem;letter-spacing:0.12em;color:var(--bn);margin-bottom:0.6rem;text-transform:uppercase}
+.alt-p{font-size:0.95rem;color:var(--tx);line-height:1.7}
+
+.pull-quote{margin:2rem 0;padding:1.5rem 2rem;border-top:1px solid rgba(30,107,58,0.3);border-bottom:1px solid rgba(30,107,58,0.3);text-align:center;position:relative}
+.pull-quote p{font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:0.05em;color:var(--bn);font-style:normal;line-height:1.6;margin:0}
+.pull-quote::before{content:'✦';position:absolute;top:-0.7rem;left:50%;transform:translateX(-50%);background:var(--blk);padding:0 0.5rem;color:var(--gb);font-size:0.8rem}
+.pull-quote::after{content:'✦';position:absolute;bottom:-0.7rem;left:50%;transform:translateX(-50%);background:var(--blk);padding:0 0.5rem;color:var(--gb);font-size:0.8rem}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nl" href="#">CRAWJU</a>
+  <ul class="nm">
+    <li><a href="#lore">Lore</a></li>
+    <li><a href="#origin">Origin</a></li>
+    <li><a href="#swamp">The Swamp</a></li>
+    <li><a href="#vault">The Vault</a></li>
+    <li><a href="#buy">Buy</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#figurine" class="ns">Son of Krawju ↗</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hbg">
+    <video autoplay muted loop playsinline poster="https://raw.githubusercontent.com/crawju-swamp/nothing/main/assets/crawju_hero.jpg">
+      <source src="https://raw.githubusercontent.com/crawju-swamp/nothing/main/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hbg-fallback"></div>
+  </div><div class="hgrad"></div><div class="htop"></div><div class="hbot"></div><div class="hscr"></div>
+  <div class="ff" style="top:35%;left:18%;--fx:14px;--fy:-28px;animation-duration:7s;animation-delay:0s"></div>
+  <div class="ff" style="top:45%;left:35%;--fx:-10px;--fy:-22px;animation-duration:9s;animation-delay:1.5s"></div>
+  <div class="ff" style="top:55%;left:28%;--fx:12px;--fy:-18px;animation-duration:6.5s;animation-delay:3s"></div>
+  <div class="ff" style="top:30%;left:45%;--fx:-8px;--fy:-30px;animation-duration:8s;animation-delay:0.8s"></div>
+  <div class="ff" style="top:60%;left:12%;--fx:16px;--fy:-20px;animation-duration:10s;animation-delay:2s"></div>
+  <div class="hc">
+    <h1 class="ht"><span class="htt">CRAWJU</span></h1>
+    <div class="hline"></div>
+    <span class="htag">The Next Great Kaiju — Forged in the Eternal Swamp</span>
+    <p class="hlore">A territorial force from the depths of the swamp. Ancient, inevitable, and not to be mistaken for a friendly mascot. The memes are real — but so is the myth. Show true devotion. Be rewarded.</p>
+    <div class="hstats">
+      <div class="sv"><span class="svv">$CRAWJU</span><span class="svl">Cardano</span></div>
+      <div class="sv"><span class="svv">Fair Launch</span><span class="svl">No Presale</span></div>
+      <div class="sv"><span class="svv">100%</span><span class="svl">In Circulation</span></div>
+      <div class="sv"><span class="svv">Licensed</span><span class="svl">Official IP</span></div>
+    </div>
+    <div class="ctas">
+      <a href="https://app.dexhunter.io/swap?tokenIdSell=&tokenIdBuy=ac597ca62a32cab3f4766c8f9cd577e50ebb1d00383ec7fa3990b016435241574a55" target="_blank" class="bm">Acquire $CRAWJU</a>
+      <a href="#lore" class="bgb">Enter the Swamp</a>
+    </div>
+  </div>
+</section>
+
+<section class="ls" id="lore">
+  <div class="si">
+    <span class="stg">The World</span>
+    <h2 class="stt">Who Is Crawju?</h2>
+    <div class="divd"></div>
+    <div class="lg">
+      <div>
+        <div class="imgf">
+          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block">
+          <source src="https://raw.githubusercontent.com/crawju-swamp/nothing/main/wroship_neglect.mp4" type="video/mp4">
+        </video>
+        </div>
+      </div>
+      <div class="lt">
+        <p>Crawju is the licensed meme character of Krawju — a primordial kaiju and the original IP of Tolzar Toys.</p><p>Ancient, territorial, and destructive by nature, he exists on a dark, all-swamp world inhabited by deadly creatures, dark magic, and celestial beings. Entire tribes have formed rituals and belief systems around him, not out of love, but out of survival.</p>
+        <div class="pull-quote"><p>Crawju draws power from worship. When satisfied, he shares glimpses of the universe's deepest secrets. When neglected, he brings carnage.</p></div>
+        <p>There is no middle ground. Only devotion or consequence.</p>
+        <p>What began as a story is becoming something larger — where myth meets the internet and attention becomes power.</p><p>A new kind of kaiju, built through narrative, community, and belief. In time, Crawju will not just inhabit the swamp. He will define what comes out of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="os" id="origin">
+  <div class="os-content">
+    <div class="si">
+      <span class="stg">The Origin</span>
+      <h2 class="stt">How the Meme Began</h2>
+      <div class="divd"></div>
+    </div>
+
+    <div class="alt-item">
+      <div class="alt-img">
+        <img src="https://raw.githubusercontent.com/crawju-swamp/nothing/main/assets/figurine_section.jpg" alt="The Figurine" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div class="alt-text">
+        <div class="alt-tn">I</div>
+        <h3 class="alt-h3">The Figurine</h3>
+        <p class="alt-p">Charles Hoskinson discovered the Son of Krawju figurine at a kaiju convention. The creature's raw, primordial design immediately captured his imagination. And he then posted about it on X. For reasons known only to Charles, he called it Crawju — with a C. That single letter gave the creature its own distinct online identity, separate from the IP but unmistakably connected to it.</p>
+      </div>
+    </div>
+
+    <div class="alt-item reverse">
+      <div class="alt-img">
+        <img src="https://raw.githubusercontent.com/crawju-swamp/nothing/main/assets/memecoin_section.jpg" alt="The Memecoin" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div class="alt-text">
+        <div class="alt-tn">II</div>
+        <h3 class="alt-h3">The Memecoin</h3>
+        <p class="alt-p">The memecoin launched fairly on Snek Fun with no formal team, becoming a fully community-owned token from day one. Charles kept posting about it on X, brought it up on podcasts, and even bought the token live on stream — turning a kaiju figurine into a Cardano moment nobody saw coming. What started as a community meme has since grown into something more intentional through obtaining a licensing deal: staying true to who Crawju is as a character, aligning with the original IP, while preserving the creative freedom that made the community fall in love with him in the first place.</p>
+      </div>
+    </div>
+
+    <div class="alt-item">
+      <div class="alt-img">
+        <img src="https://raw.githubusercontent.com/crawju-swamp/nothing/main/assets/meme_section.jpg" alt="The Meme" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div class="alt-text">
+        <div class="alt-tn">III</div>
+        <h3 class="alt-h3">The Meme</h3>
+        <p class="alt-p">The memes are the myth in motion. Crawju's lore maps perfectly onto everyday life. Devotion gets rewarded. Neglect brings destruction. Secrets are shared only with the worthy. Miss an opportunity? You neglected the swamp. Made a great call? Crawju was pleased. The themes write themselves: worship and reward, arrogance and ruin, patience and hidden knowledge. And through it all, Crawju is always watching. Always observing. Nothing goes unnoticed in the swamp. The goal is to take these ancient, primal forces and place them into the moments everyone recognizes. Markets, relationships, daily wins and losses. Letting the character breathe through the culture rather than just existing on a chart.</p>
+      </div>
+    </div>
+
+    <div class="si" style="margin-top:0">
+      <div class="cq">
+        <p>And Remember, Don't Sleep on Crawju</p>
+        <div class="cqa">— Charles Hoskinson, Founder of Cardano</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ss" id="swamp">
+  <div class="si">
+    <span class="stg">Utility</span>
+    <h2 class="stt">The Swamp</h2>
+    <div class="divd"></div>
+    <p style="max-width:580px;color:var(--fg);font-size:0.98rem;margin-bottom:0">$CRAWJU is part of an expanding universe of lore-driven experiences. Every integration is rooted in the mythology of the eternal swamp.</p>
+    <div class="sg">
+      <div class="sc" style="padding:0;overflow:hidden"><img src="https://raw.githubusercontent.com/crawju-swamp/nothing/main/assets/novel_card.jpg" alt="The Graphic Novel" style="width:100%;height:180px;object-fit:cover;display:block;opacity:0.85"><div style="padding:2.2rem 1.8rem"><div class="sci">📖</div><div class="scs dev">In Production</div><h3>The Graphic Novel</h3><p>The official Crawju story from Tolzar Toys — revealing the full lore of the swamp world. Holders get first access.</p></div></div>
+      <div class="sc" style="padding:0;overflow:hidden"><div style="width:100%;height:180px;overflow:hidden;display:block"><svg width="100%" height="180" viewBox="0 0 705 690" preserveAspectRatio="xMidYMid slice" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+<title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">The Offering — Crawju</title>
+<defs><style>@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=Cinzel:wght@600&display=swap");</style></defs>
+<desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Square marketing thumbnail for The Offering — Crawju swamp game</desc>
+
+<defs>
+  <radialGradient id="skyGrad2" cx="50%" cy="30%" r="70%">
+    <stop offset="0%" stop-color="#0a1a10"/>
+    <stop offset="60%" stop-color="#060d0a"/>
+    <stop offset="100%" stop-color="#04060a"/>
+  </radialGradient>
+  <radialGradient id="waterGrad2" cx="50%" cy="50%" r="60%">
+    <stop offset="0%" stop-color="#0d1f14"/>
+    <stop offset="100%" stop-color="#060d09"/>
+  </radialGradient>
+  <radialGradient id="glowGreen2" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#2a7a4e" stop-opacity="0.6"/>
+    <stop offset="100%" stop-color="#2a7a4e" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowRed2" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#8a1010" stop-opacity="0.8"/>
+    <stop offset="100%" stop-color="#8a1010" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="eyeGlow2" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#e84a4a" stop-opacity="0.9"/>
+    <stop offset="40%" stop-color="#c93a3a" stop-opacity="0.5"/>
+    <stop offset="100%" stop-color="#8a1010" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="celestialGrad2" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#4ecb82" stop-opacity="0.9"/>
+    <stop offset="60%" stop-color="#2a7a4e" stop-opacity="0.4"/>
+    <stop offset="100%" stop-color="#2a7a4e" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="purpleNebula2" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#7c5cbf" stop-opacity="0.5"/>
+    <stop offset="100%" stop-color="#7c5cbf" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="waterSurface2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1a3a28" stop-opacity="0.6"/>
+    <stop offset="100%" stop-color="#060d09" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="titleGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#d4e8d8"/>
+    <stop offset="30%" stop-color="#4ecb82"/>
+    <stop offset="65%" stop-color="#9b7fe8"/>
+    <stop offset="85%" stop-color="#e8843a"/>
+    <stop offset="100%" stop-color="#e84a4a"/>
+  </linearGradient>
+  <linearGradient id="fogGrad2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0a1810" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#060d09" stop-opacity="0.95"/>
+  </linearGradient>
+  <filter id="softBlur2">
+    <feGaussianBlur stdDeviation="3"/>
+  </filter>
+  <clipPath id="squareClip">
+    <rect width="680" height="680" rx="16"/>
+  </clipPath>
+</defs>
+
+<g clip-path="url(#squareClip)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+
+<!-- Sky -->
+<rect width="680" height="680" fill="url(#skyGrad2)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Purple nebula left -->
+<ellipse cx="80" cy="280" rx="200" ry="300" fill="url(#purpleNebula2)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Celestial anomaly top center -->
+<ellipse cx="340" cy="90" rx="110" ry="70" fill="url(#celestialGrad2)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="340" cy="96" rx="65" ry="40" fill="#1a4a2e" fill-opacity="0.7" style="fill:rgb(26, 74, 46);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="340" cy="100" rx="32" ry="18" fill="#2a7a4e" fill-opacity="0.5" style="fill:rgb(42, 122, 78);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M288 72 Q314 50 340 64 Q366 78 392 58" stroke="#4ecb82" stroke-width="1" fill="none" stroke-opacity="0.5" style="fill:none;stroke:rgb(78, 203, 130);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M278 85 Q308 62 340 78 Q372 94 402 72" stroke="#4ecb82" stroke-width="0.7" fill="none" stroke-opacity="0.3" style="fill:none;stroke:rgb(78, 203, 130);color:rgb(255, 255, 255);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M282 98 Q312 76 340 92 Q368 108 398 88" stroke="#2a7a4e" stroke-width="0.8" fill="none" stroke-opacity="0.35" style="fill:none;stroke:rgb(42, 122, 78);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Stars -->
+<circle cx="120" cy="50" r="1.4" fill="#4ecb82" fill-opacity="0.7" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="200" cy="32" r="1" fill="#4ecb82" fill-opacity="0.5" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="280" cy="22" r="1.2" fill="#4ecb82" fill-opacity="0.6" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="420" cy="28" r="1" fill="#4ecb82" fill-opacity="0.5" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="500" cy="42" r="1.3" fill="#4ecb82" fill-opacity="0.6" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="580" cy="25" r="0.9" fill="#4ecb82" fill-opacity="0.4" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="625" cy="58" r="1.1" fill="#4ecb82" fill-opacity="0.5" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="55" cy="85" r="1" fill="#4ecb82" fill-opacity="0.4" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="455" cy="18" r="0.8" fill="#e8843a" fill-opacity="0.6" style="fill:rgb(232, 132, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="165" cy="65" r="0.9" fill="#e8843a" fill-opacity="0.5" style="fill:rgb(232, 132, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="558" cy="52" r="1" fill="#9b7fe8" fill-opacity="0.5" style="fill:rgb(155, 127, 232);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="340" cy="42" r="0.8" fill="#4ecb82" fill-opacity="0.4" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="88" cy="130" r="1" fill="#4ecb82" fill-opacity="0.3" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="605" cy="110" r="0.8" fill="#4ecb82" fill-opacity="0.35" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Left tree -->
+<rect x="-15" y="100" width="60" height="580" rx="10" fill="#060d08" style="fill:rgb(6, 13, 8);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="5" y="100" width="28" height="580" rx="5" fill="#0a1510" style="fill:rgb(10, 21, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="22" cy="130" rx="35" ry="14" fill="#0d2018" fill-opacity="0.8" style="fill:rgb(13, 32, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="8" cy="180" rx="28" ry="11" fill="#0a1810" fill-opacity="0.7" style="fill:rgb(10, 24, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M38 140 Q90 115 140 132 Q175 144 200 132" stroke="#060d08" stroke-width="22" fill="none" stroke-linecap="round" style="fill:none;stroke:rgb(6, 13, 8);color:rgb(255, 255, 255);stroke-width:22px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M38 140 Q90 115 140 132 Q175 144 200 132" stroke="#0a1510" stroke-width="12" fill="none" stroke-linecap="round" style="fill:none;stroke:rgb(10, 21, 16);color:rgb(255, 255, 255);stroke-width:12px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M75 128 Q80 165 72 200 Q66 230 74 260" stroke="#0d2018" stroke-width="3" fill="none" style="fill:none;stroke:rgb(13, 32, 24);color:rgb(255, 255, 255);stroke-width:3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M100 122 Q106 158 98 192 Q92 220 99 250" stroke="#0d2018" stroke-width="2.5" fill="none" style="fill:none;stroke:rgb(13, 32, 24);color:rgb(255, 255, 255);stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M55 145 Q60 175 53 205 Q48 228 55 252" stroke="#0a1810" stroke-width="2" fill="none" style="fill:none;stroke:rgb(10, 24, 16);color:rgb(255, 255, 255);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Right tree -->
+<rect x="635" y="88" width="60" height="592" rx="10" fill="#060d08" style="fill:rgb(6, 13, 8);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="647" y="88" width="28" height="592" rx="5" fill="#0a1510" style="fill:rgb(10, 21, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="660" cy="115" rx="32" ry="13" fill="#0d2018" fill-opacity="0.8" style="fill:rgb(13, 32, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M648 155 Q595 128 548 145 Q515 158 492 145" stroke="#060d08" stroke-width="22" fill="none" stroke-linecap="round" style="fill:none;stroke:rgb(6, 13, 8);color:rgb(255, 255, 255);stroke-width:22px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M648 155 Q595 128 548 145 Q515 158 492 145" stroke="#0a1510" stroke-width="12" fill="none" stroke-linecap="round" style="fill:none;stroke:rgb(10, 21, 16);color:rgb(255, 255, 255);stroke-width:12px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M608 142 Q614 178 606 213 Q600 240 607 268" stroke="#0d2018" stroke-width="3" fill="none" style="fill:none;stroke:rgb(13, 32, 24);color:rgb(255, 255, 255);stroke-width:3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M585 136 Q591 170 583 205 Q577 232 584 260" stroke="#0d2018" stroke-width="2.5" fill="none" style="fill:none;stroke:rgb(13, 32, 24);color:rgb(255, 255, 255);stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Mid background trees -->
+<rect x="140" y="155" width="30" height="525" rx="6" fill="#080f0a" style="fill:rgb(8, 15, 10);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="190" y="175" width="22" height="505" rx="4" fill="#07100a" style="fill:rgb(7, 16, 10);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="462" y="160" width="28" height="520" rx="6" fill="#080f0a" style="fill:rgb(8, 15, 10);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="512" y="178" width="20" height="502" rx="4" fill="#07100a" style="fill:rgb(7, 16, 10);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="248" y="185" width="18" height="495" rx="3" fill="#060e08" style="fill:rgb(6, 14, 8);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="432" y="190" width="16" height="490" rx="3" fill="#060e08" style="fill:rgb(6, 14, 8);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="300" y="200" width="14" height="480" rx="3" fill="#060d08" style="fill:rgb(6, 13, 8);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="380" y="195" width="15" height="485" rx="3" fill="#060d08" style="fill:rgb(6, 13, 8);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Fireflies -->
+<circle cx="158" cy="210" r="3.5" fill="#4ecb82" fill-opacity="0.5" filter="url(#softBlur2)" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="156" cy="210" r="1.8" fill="#4ecb82" fill-opacity="0.9" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="198" cy="245" r="3" fill="#4ecb82" fill-opacity="0.45" filter="url(#softBlur2)" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="196" cy="245" r="1.4" fill="#4ecb82" fill-opacity="0.85" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="472" cy="220" r="3.5" fill="#4ecb82" fill-opacity="0.5" filter="url(#softBlur2)" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="470" cy="220" r="1.8" fill="#4ecb82" fill-opacity="0.9" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="528" cy="200" r="2.5" fill="#4ecb82" fill-opacity="0.45" filter="url(#softBlur2)" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="526" cy="200" r="1.2" fill="#4ecb82" fill-opacity="0.8" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="105" cy="265" r="3" fill="#4ecb82" fill-opacity="0.4" filter="url(#softBlur2)" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="590" cy="250" r="2.5" fill="#4ecb82" fill-opacity="0.45" filter="url(#softBlur2)" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="270" cy="230" r="2" fill="#4ecb82" fill-opacity="0.4" filter="url(#softBlur2)" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="268" cy="230" r="1" fill="#4ecb82" fill-opacity="0.8" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="415" cy="218" r="2.2" fill="#4ecb82" fill-opacity="0.4" filter="url(#softBlur2)" style="fill:rgb(78, 203, 130);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Water surface -->
+<rect x="0" y="450" width="680" height="230" fill="url(#waterGrad2)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="0" y="450" width="680" height="22" fill="url(#waterSurface2)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M60 462 Q180 457 300 463 Q380 467 460 461 Q540 456 620 463" stroke="#1a3a28" stroke-width="1.2" fill="none" stroke-opacity="0.5" style="fill:none;stroke:rgb(26, 58, 40);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M40 475 Q170 470 300 476 Q380 480 460 474 Q550 469 640 476" stroke="#1a3a28" stroke-width="0.8" fill="none" stroke-opacity="0.3" style="fill:none;stroke:rgb(26, 58, 40);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Lily pads -->
+<ellipse cx="110" cy="472" rx="26" ry="9" fill="#0d2a14" fill-opacity="0.8" style="fill:rgb(13, 42, 20);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="152" cy="480" rx="18" ry="7" fill="#0a2010" fill-opacity="0.7" style="fill:rgb(10, 32, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="540" cy="474" rx="24" ry="8" fill="#0d2a14" fill-opacity="0.8" style="fill:rgb(13, 42, 20);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="578" cy="482" rx="16" ry="6" fill="#0a2010" fill-opacity="0.6" style="fill:rgb(10, 32, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="488" cy="469" rx="14" ry="5" fill="#0d2a14" fill-opacity="0.7" style="fill:rgb(13, 42, 20);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="200" cy="478" rx="12" ry="4" fill="#0d2a14" fill-opacity="0.5" style="fill:rgb(13, 42, 20);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Reeds left -->
+<rect x="78" y="370" width="3.5" height="100" rx="1.5" fill="#0d2018" style="fill:rgb(13, 32, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="88" y="385" width="3" height="90" rx="1.5" fill="#0a1810" style="fill:rgb(10, 24, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="98" y="375" width="2.5" height="95" rx="1.2" fill="#0d2018" style="fill:rgb(13, 32, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="79" cy="367" rx="5" ry="10" fill="#162a1e" style="fill:rgb(22, 42, 30);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="88" cy="382" rx="4.5" ry="9" fill="#122018" style="fill:rgb(18, 32, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Reeds right -->
+<rect x="592" y="375" width="3.5" height="100" rx="1.5" fill="#0d2018" style="fill:rgb(13, 32, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="602" y="388" width="3" height="88" rx="1.5" fill="#0a1810" style="fill:rgb(10, 24, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="612" y="378" width="2.5" height="95" rx="1.2" fill="#0d2018" style="fill:rgb(13, 32, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="593" cy="372" rx="5" ry="10" fill="#162a1e" style="fill:rgb(22, 42, 30);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Mist -->
+<ellipse cx="200" cy="460" rx="200" ry="30" fill="#0a1810" fill-opacity="0.4" filter="url(#softBlur2)" style="fill:rgb(10, 24, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="500" cy="465" rx="180" ry="25" fill="#0a1810" fill-opacity="0.35" filter="url(#softBlur2)" style="fill:rgb(10, 24, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="340" cy="455" rx="240" ry="22" fill="#0d1f14" fill-opacity="0.3" filter="url(#softBlur2)" style="fill:rgb(13, 31, 20);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Eye glow -->
+<ellipse cx="290" cy="480" rx="45" ry="28" fill="url(#eyeGlow2)" fill-opacity="0.7" filter="url(#softBlur2)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="396" cy="480" rx="45" ry="28" fill="url(#eyeGlow2)" fill-opacity="0.7" filter="url(#softBlur2)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Crawju body mass -->
+<ellipse cx="342" cy="488" rx="105" ry="26" fill="#1a0808" style="fill:rgb(26, 8, 8);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="342" cy="485" rx="96" ry="21" fill="#220a0a" style="fill:rgb(34, 10, 10);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="342" cy="482" rx="82" ry="17" fill="#2a0c0c" style="fill:rgb(42, 12, 12);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Spikes -->
+<path d="M302 470 Q306 458 310 470" fill="#4a1414" style="fill:rgb(74, 20, 20);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M337 464 Q342 450 347 464" fill="#4a1414" style="fill:rgb(74, 20, 20);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M374 470 Q378 458 382 470" fill="#4a1414" style="fill:rgb(74, 20, 20);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="306" cy="469" rx="9" ry="6" fill="#3a1010" style="fill:rgb(58, 16, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="342" cy="463" rx="10" ry="7" fill="#3a1010" style="fill:rgb(58, 16, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="378" cy="469" rx="9" ry="6" fill="#3a1010" style="fill:rgb(58, 16, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Left eye -->
+<ellipse cx="290" cy="472" rx="14" ry="8" fill="#1a0505" style="fill:rgb(26, 5, 5);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="290" cy="472" rx="10" ry="6" fill="#3a0808" style="fill:rgb(58, 8, 8);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="290" cy="472" rx="6" ry="4" fill="#c93a3a" style="fill:rgb(201, 58, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="290" cy="472" rx="3.5" ry="2.5" fill="#e84a4a" style="fill:rgb(232, 74, 74);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="292" cy="471" r="1.2" fill="#ff8080" fill-opacity="0.8" style="fill:rgb(255, 128, 128);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Right eye -->
+<ellipse cx="396" cy="472" rx="14" ry="8" fill="#1a0505" style="fill:rgb(26, 5, 5);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="396" cy="472" rx="10" ry="6" fill="#3a0808" style="fill:rgb(58, 8, 8);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="396" cy="472" rx="6" ry="4" fill="#c93a3a" style="fill:rgb(201, 58, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="396" cy="472" rx="3.5" ry="2.5" fill="#e84a4a" style="fill:rgb(232, 74, 74);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="398" cy="471" r="1.2" fill="#ff8080" fill-opacity="0.8" style="fill:rgb(255, 128, 128);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Eye water reflections -->
+<ellipse cx="290" cy="498" rx="6" ry="2.5" fill="#e84a4a" fill-opacity="0.2" style="fill:rgb(232, 74, 74);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="396" cy="498" rx="6" ry="2.5" fill="#e84a4a" fill-opacity="0.2" style="fill:rgb(232, 74, 74);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Ripples -->
+<ellipse cx="342" cy="488" rx="130" ry="22" fill="none" stroke="#2a5a3a" stroke-width="1" stroke-opacity="0.4" style="fill:none;stroke:rgb(42, 90, 58);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="342" cy="488" rx="175" ry="30" fill="none" stroke="#2a5a3a" stroke-width="0.7" stroke-opacity="0.25" style="fill:none;stroke:rgb(42, 90, 58);color:rgb(255, 255, 255);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<ellipse cx="342" cy="488" rx="220" ry="38" fill="none" stroke="#2a5a3a" stroke-width="0.5" stroke-opacity="0.15" style="fill:none;stroke:rgb(42, 90, 58);color:rgb(255, 255, 255);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Green glow water center -->
+<ellipse cx="342" cy="500" rx="150" ry="55" fill="url(#glowGreen2)" filter="url(#softBlur2)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Red glow from body -->
+<ellipse cx="342" cy="482" rx="120" ry="38" fill="url(#glowRed2)" filter="url(#softBlur2)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- Heavy fog bottom -->
+<rect x="0" y="540" width="680" height="140" fill="url(#fogGrad2)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<!-- THE OFFERING — single centered title, large, dominant -->
+
+
+
+<!-- Corner brackets -->
+<path d="M28 28 L28 52 L52 52" stroke="#2a7a4e" stroke-width="1.2" fill="none" stroke-opacity="0.5" style="fill:none;stroke:rgb(42, 122, 78);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M652 28 L652 52 L628 52" stroke="#2a7a4e" stroke-width="1.2" fill="none" stroke-opacity="0.5" style="fill:none;stroke:rgb(42, 122, 78);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M28 652 L28 628 L52 628" stroke="#2a7a4e" stroke-width="1.2" fill="none" stroke-opacity="0.5" style="fill:none;stroke:rgb(42, 122, 78);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<path d="M652 652 L652 628 L628 628" stroke="#2a7a4e" stroke-width="1.2" fill="none" stroke-opacity="0.5" style="fill:none;stroke:rgb(42, 122, 78);color:rgb(255, 255, 255);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+</g>
+</svg></div><div style="padding:2.2rem 1.8rem"><div class="sci">⚔️</div><div class="scs dev">In Development</div><h3>Swamp Games</h3><p>Lore-driven games built natively for the Crawju ecosystem. Free to play for everyone. Hold $CRAWJU to claim your spot on the leaderboard and compete for rewards.</p></div></div>
+      <div class="sc" style="padding:0;overflow:hidden"><img src="https://raw.githubusercontent.com/crawju-swamp/nothing/main/assets/lore_card.jpg" alt="Lore Expansions" style="width:100%;height:180px;object-fit:cover;display:block;opacity:0.85"><div style="padding:2.2rem 1.8rem"><div class="sci">✦</div><div class="scs soon">Forthcoming</div><h3>Lore Expansions</h3><p>As the graphic novel releases, the universe grows. New characters, worlds, and utility aligned with the IP.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="vs" id="vault">
+  <div class="si">
+    <span class="stg">Community Assets</span>
+    <h2 class="stt">The Vault</h2>
+    <div class="divd"></div>
+    <p style="color:var(--fg);font-size:0.98rem;margin-bottom:2.5rem;max-width:580px">Weapons of the swamp. Download freely, share everywhere. New assets added as the community grows.</p>
+    <div class="vtabs">
+      <button class="vtab active" onclick="switchTab('memes',this)">Memes<span class="vtab-count" id="cnt-memes"></span></button>
+      <button class="vtab" onclick="switchTab('gifs',this)">GIFs<span class="vtab-count" id="cnt-gifs"></span></button>
+      <button class="vtab" onclick="switchTab('wallpapers',this)">Wallpapers<span class="vtab-count" id="cnt-wallpapers"></span></button>
+    </div>
+    <div class="vgrid" id="vgrid"></div>
+  </div>
+</section>
+
+<section class="fs" id="figurine">
+  <div class="fi">
+    <div>
+      <div class="fiff">
+        <div class="corn tl"></div><div class="corn tr"></div><div class="corn bl"></div><div class="corn brr"></div>
+        <img src="https://raw.githubusercontent.com/crawju-swamp/nothing/main/assets/fig_kanji.jpg" alt="Son of Krawju" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+    </div>
+    <div>
+      <span class="stg">The Original Artifact</span>
+      <h2 class="stt">Son of Krawju</h2>
+      <div class="divd"></div>
+      <p style="font-size:0.95rem;color:var(--fg);line-height:1.6;margin-bottom:0.5rem">This is where Crawju began. A hand-sculpted, small-batch kaiju from <strong style="color:var(--bn)">Tolzar Toys</strong>. Own the original creature that started it all.</p>
+      <div class="fsp">
+        <div class="fsi">Factory painted soft vinyl</div>
+        <div class="fsi">High-gloss wet coating</div>
+        <div class="fsi">7" tall · 8" wide · 9" deep</div>
+        <div class="fsi">Packaged in an art box</div>
+        <div class="fsi">Limited small-batch run</div>
+      </div>
+      <div class="fpr">$199 USD</div>
+      <a href="https://tolzartoys.com/product/son-of-krawju-preorder/" target="_blank" class="rdb">Buy from Tolzar Toys →</a>
+      <div class="fdis">All purchases go directly to <strong style="color:var(--bn)">Tolzar Toys</strong>. The Crawju community receives no commission. We link to this product to support the artist and the IP that made all of this possible. Summon with caution.</div>
+    </div>
+  </div>
+</section>
+
+<section class="bs" id="buy">
+  <div class="si">
+    <span class="stg">Join the Swamp</span>
+    <h2 class="stt">Acquire $CRAWJU</h2>
+    <div class="divd"></div>
+    <div class="bsg">
+      <div class="bst"><div class="bsn">1</div><h3>Get a Wallet</h3><p>Download <a href="https://eternl.io" target="_blank">Eternl</a> or <a href="https://vespr.xyz" target="_blank">Vespr</a>. Set up your Cardano wallet and fund it with ADA.</p></div>
+      <div class="bst"><div class="bsn">2</div><h3>Swap for $CRAWJU</h3><p>Use DexHunter to swap ADA for $CRAWJU.</p><a href="https://app.dexhunter.io/swap?tokenIdSell=&tokenIdBuy=ac597ca62a32cab3f4766c8f9cd577e50ebb1d00383ec7fa3990b016435241574a55" target="_blank" class="bm" style="margin-top:1.2rem;display:inline-block;font-size:0.65rem;padding:0.75rem 1.5rem;color:#ddc898">Swap on DexHunter →</a></div>
+      <div class="bst"><div class="bsn">3</div><h3>Enter the Swamp</h3><p>You are now part of the tribe. Join the community on <a href="https://x.com/crawju" target="_blank" style="color:#6bb8f0">X</a> and <a href="https://discord.gg/HvpmebBdwC" target="_blank" style="color:#9ba8e0">Discord</a>.</p></div>
+    </div>
+    <div class="car">
+      <div>
+        <div class="cal">Policy ID · Cardano</div>
+        <div class="caa">ac597ca62a32cab3f4766c8f9cd577e50ebb1d00383ec7fa3990b016</div>
+      </div>
+      <button onclick="navigator.clipboard.writeText('ac597ca62a32cab3f4766c8f9cd577e50ebb1d00383ec7fa3990b016').then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Policy ID',2000)})" style="font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;padding:0.75rem 1.5rem;background:rgba(4,6,10,0.6);color:var(--bn);border:1px solid rgba(30,107,58,0.4);cursor:pointer;white-space:nowrap">Copy Policy ID</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="cms" id="community">
+  <div class="si">
+    <span class="stg">The Tribe</span>
+    <h2 class="stt">Join the Community</h2>
+    <div class="divd"></div>
+    <p style="max-width:500px;color:var(--fg);font-size:1rem">The swamp does not welcome the passive. Those who show devotion — Crawju notices. Come join the tribe.</p>
+    <div class="cml">
+      <a href="https://x.com/crawju" class="cma cma-x" target="_blank" style="border-color:rgba(29,155,240,0.4);color:#6bb8f0;transition:all 0.3s">✕ &nbsp; Twitter / X</a>
+      <a href="https://discord.gg/HvpmebBdwC" class="cma cma-discord" target="_blank" style="border-color:rgba(114,137,218,0.4);color:#9ba8e0;transition:all 0.3s">◈ &nbsp; Discord</a>
+    </div>
+  </div>
+</section>
+
+<section class="chs" id="charts">
+  <div class="si">
+    <span class="stg">Data</span>
+    <h2 class="stt">Charts & Data</h2>
+    <div class="divd"></div>
+    <div class="chg">
+      <a href="https://www.taptools.io/charts/token/d8eb52caf3289a2880288b23141ce3d2a7025dcf76f26fd5659add06.79f0b7bd74fe2b72012d525ba89a4622d408683da982c5f37f1eb345be3bba2c?rankBy=volume&order=desc&page=3" class="chi" target="_blank"><div class="cd"></div>TapTools</a>
+      <a href="https://www.coingecko.com/en/coins/crawju" class="chi" target="_blank"><div class="cd"></div>CoinGecko</a>
+      <a href="https://app.dexhunter.io/swap?tokenIdSell=&tokenIdBuy=ac597ca62a32cab3f4766c8f9cd577e50ebb1d00383ec7fa3990b016435241574a55" class="chi" target="_blank"><div class="cd"></div>DexHunter</a>
+      <a href="https://cardanoscan.io/token/ac597ca62a32cab3f4766c8f9cd577e50ebb1d00383ec7fa3990b016435241574a55" class="chi" target="_blank"><div class="cd"></div>CardanoScan</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="flogo">CRAWJU</div>
+  <div class="fline"></div>
+  <p class="ft">Licensed IP by Tolzar Toys &nbsp;·&nbsp; Community Owned &nbsp;·&nbsp; Built on Cardano</p>
+  <p class="ft">$CRAWJU is a community memecoin with no intrinsic value or expectation of financial return.<br>There is no formal team or roadmap. The coin is for entertainment purposes only.</p>
+  <p class="ft" style="margin-top:0.5rem;font-style:italic">We don't actually want you to worship Crawju.</p>
+</footer>
+
+<div class="lb" id="lb" onclick="closeLb(event)">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLb()">✕ Close</button>
+    <img id="lb-img" src="" alt="">
+    <div><a class="lb-dl" id="lb-dl" href="#" download target="_blank">↓ Download</a></div>
+  </div>
+</div>
+
+<script>
+const REPO = 'crawju-swamp/nothing';
+const FOLDERS = {memes:'vault/memes',gifs:'vault/gifs',wallpapers:'vault/wallpapers'};
+const EXTS = ['png','jpg','jpeg','gif','webp'];
+let currentTab = 'memes';
+let cache = {};
+
+function switchTab(tab, el) {
+  currentTab = tab;
+  document.querySelectorAll('.vtab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderGrid();
+  if (!cache[tab]) loadAssets();
+}
+
+async function loadAssets() {
+  const tab = currentTab;
+  const url = `https://api.github.com/repos/${REPO}/contents/${FOLDERS[tab]}`;
+  document.getElementById('vgrid').innerHTML = `<div class="vempty"><div class="vempty-icon">⏳</div><div class="vempty-title">Loading...</div></div>`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(res.status);
+    const files = await res.json();
+    cache[tab] = files.filter(f => EXTS.includes(f.name.split('.').pop().toLowerCase()));
+    const cnt = document.getElementById('cnt-' + tab);
+    if (cnt) cnt.textContent = ' ' + cache[tab].length;
+    renderGrid();
+  } catch(e) {
+    cache[tab] = [];
+    renderGrid();
+  }
+}
+
+function renderGrid() {
+  const assets = cache[currentTab];
+  const grid = document.getElementById('vgrid');
+  if (!assets) { loadAssets(); return; }
+  if (!assets.length) {
+    grid.innerHTML = `<div class="vempty"><div class="vempty-icon">🌿</div><div class="vempty-title">Coming Soon</div><div class="vempty-sub">Assets being added to vault/${currentTab}/</div></div>`;
+    return;
+  }
+  grid.innerHTML = assets.map(f => {
+    const isGif = f.name.toLowerCase().endsWith('.gif');
+    const isWall = currentTab === 'wallpapers';
+    const cls = isGif ? 'is-gif' : isWall ? 'is-wall' : '';
+    const name = f.name.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ');
+    const kb = Math.round(f.size / 1024);
+    return `<div class="acard">
+      <img class="athumb ${cls}" src="${f.download_url}" alt="${name}" loading="lazy">
+      <div class="aover">
+        <button class="abtn abtn-view" onclick="openLb('${f.download_url}','${f.name}')">View</button>
+        <a class="abtn abtn-dl" href="${f.download_url}" download="${f.name}" target="_blank">↓ Save</a>
+      </div>
+      <div class="ainfo"><span class="aname">${name}</span><span class="asize">${kb} KB</span></div>
+    </div>`;
+  }).join('');
+}
+
+function openLb(url, name) {
+  document.getElementById('lb-img').src = url;
+  document.getElementById('lb-dl').href = url;
+  document.getElementById('lb-dl').download = name;
+  document.getElementById('lb').classList.add('open');
+}
+function closeLb(e) {
+  if (!e || e.target === document.getElementById('lb') || e.currentTarget.classList.contains('lb-close')) {
+    document.getElementById('lb').classList.remove('open');
+  }
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLb(); });
+loadAssets();
+</script>
+</body>
+</html>
