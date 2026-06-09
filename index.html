@@ -648,6 +648,7 @@ footer{background:var(--blk);border-top:1px solid rgba(30,107,58,0.1);padding:4r
       <button class="vtab active" onclick="switchTab('memes',this)">Memes<span class="vtab-count" id="cnt-memes"></span></button>
       <button class="vtab" onclick="switchTab('gifs',this)">GIFs<span class="vtab-count" id="cnt-gifs"></span></button>
       <button class="vtab" onclick="switchTab('wallpapers',this)">Wallpapers<span class="vtab-count" id="cnt-wallpapers"></span></button>
+      <button class="vtab" onclick="switchTab('codex',this)">The Codex<span class="vtab-count" id="cnt-codex"></span></button>
     </div>
     <div class="vgrid" id="vgrid"></div>
   </div>
@@ -756,8 +757,8 @@ footer{background:var(--blk);border-top:1px solid rgba(30,107,58,0.1);padding:4r
 
 <script>
 const REPO = 'crawju-swamp/nothing';
-const FOLDERS = {memes:'vault/memes',gifs:'vault/gifs',wallpapers:'vault/wallpapers'};
-const EXTS = ['png','jpg','jpeg','gif','webp'];
+const FOLDERS = {memes:'vault/memes',gifs:'vault/gifs',wallpapers:'vault/wallpapers',codex:'vault/codex'};
+const EXTS = ['png','jpg','jpeg','gif','webp','pdf'];
 let currentTab = 'memes';
 let cache = {};
 
