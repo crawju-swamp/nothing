@@ -761,6 +761,18 @@ footer{background:var(--blk);border-top:1px solid rgba(30,107,58,0.1);padding:4r
 const REPO = 'crawju-swamp/nothing';
 const FOLDERS = {memes:'vault/memes',gifs:'vault/gifs',wallpapers:'vault/wallpapers',codex:'vault/codex',expressions:'vault/expressions',swampwords:'vault/swampwords'};
 const EXTS = ['png','jpg','jpeg','gif','webp','pdf'];
+const RAW_BASE = 'https://raw.githubusercontent.com/crawju-swamp/nothing/main';
+const FALLBACK = {
+  memes:["Don't Sleep on Crawju.png","Now we meet.png","PATIENCE.png","SWAMPED OUT.png","The Good Stuff.png","This is Crawju.png","and-here-we-go.png","bad pig.png","can't outsmart the swamp.png","crawju jaws.jpeg","crawju-expressions-disappointed.png","laser eyes.png","midnight.png","most interesting kaiju in the world.png","noticed.png","over confident?.png","respect.png","slap.png","this is fine.png","this was not fine.png","you were told to listen.png"],
+  gifs:["And-Here-We-Go.gif","CRAWJU BREATHING.gif","CRAWJU NOD.gif","GM:Hello.gif","HOT.gif","MIDNIGHTCITY.gif","MORE!!.gif","Scare.gif","The-Good-Stuff.gif","This is Crawju.gif","UNFAZED.gif","approved.gif","awakened.gif","charles bowing.gif","cooking.gif","crawjucardanoflag.gif","crawjujaws.gif","crawjumidnightflag.gif","diamondclaw.gif","flicker.gif","gm-sip.gif","need to touch grass.gif","praying.gif","rage.gif","sacred offering.gif","sat night fever.gif","scanning.gif","sleeping.gif","sludge gun.gif","wen?.gif","worthy offering.gif"],
+  wallpapers:["Crawju Stance.png","This is Crawju.png","midnight.png"],
+  codex:["Crawju Attack.png","Crawju Back View.png","Crawju Front View.png","Crawju Main View 3:4.png","Crawju-World-Reference.png","crawju-character-sheet.png"],
+  expressions:["crawju-expressions-awakened.png","crawju-expressions-awkward.png","crawju-expressions-bullish.png","crawju-expressions-condemned.png","crawju-expressions-cooking.png","crawju-expressions-cool.png","crawju-expressions-crying.png","crawju-expressions-dazed.png","crawju-expressions-diamondclaw.png","crawju-expressions-disappointed.png","crawju-expressions-fomo.png","crawju-expressions-hot.png","crawju-expressions-judge.png","crawju-expressions-king.jpeg","crawju-expressions-laughing.png","crawju-expressions-mindblown.png","crawju-expressions-more.png","crawju-expressions-need to touch grass.png","crawju-expressions-possessed.png","crawju-expressions-praying.jpeg","crawju-expressions-rage.png","crawju-expressions-salute.png","crawju-expressions-shocked.png","crawju-expressions-sleeping.png","crawju-expressions-smug.png","crawju-expressions-sounds suspicious.png","crawju-expressions-thinking.png","crawju-expresssions-wen?.png","crawju-xxpressions-bartender.png"],
+  swampwords:["KNOWLEDGE.png","judgement.png","neglect..png","presence.png"]
+};
+function fallbackAssets(tab){
+  return (FALLBACK[tab]||[]).map(n => ({name:n, download_url: RAW_BASE + '/' + FOLDERS[tab] + '/' + encodeURIComponent(n), size:0}));
+}
 let currentTab = 'memes';
 let cache = {};
 
@@ -780,12 +792,16 @@ async function loadAssets() {
     const res = await fetch(url);
     if (!res.ok) throw new Error(res.status);
     const files = await res.json();
-    cache[tab] = files.filter(f => EXTS.includes(f.name.split('.').pop().toLowerCase()));
+    let list = files.filter(f => EXTS.includes(f.name.split('.').pop().toLowerCase()));
+    if (!list.length) list = fallbackAssets(tab);
+    cache[tab] = list;
     const cnt = document.getElementById('cnt-' + tab);
     if (cnt) cnt.textContent = ' ' + cache[tab].length;
     renderGrid();
   } catch(e) {
-    cache[tab] = [];
+    cache[tab] = fallbackAssets(tab);
+    const cnt = document.getElementById('cnt-' + tab);
+    if (cnt) cnt.textContent = ' ' + cache[tab].length;
     renderGrid();
   }
 }
@@ -803,14 +819,14 @@ function renderGrid() {
     const isWall = currentTab === 'wallpapers';
     const cls = isGif ? 'is-gif' : isWall ? 'is-wall' : '';
     const name = f.name.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ');
-    const kb = Math.round(f.size / 1024);
+    const kb = f.size ? Math.round(f.size / 1024) + ' KB' : '';
     return `<div class="acard">
       <img class="athumb ${cls}" src="${f.download_url}" alt="${name}" loading="lazy">
       <div class="aover">
         <button class="abtn abtn-view" onclick="openLb('${f.download_url}','${f.name}')">View</button>
         <a class="abtn abtn-dl" href="${f.download_url}" download="${f.name}" target="_blank">↓ Save</a>
       </div>
-      <div class="ainfo"><span class="aname">${name}</span><span class="asize">${kb} KB</span></div>
+      <div class="ainfo"><span class="aname">${name}</span><span class="asize">${kb}</span></div>
     </div>`;
   }).join('');
 }
